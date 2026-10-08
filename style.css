@@ -886,3 +886,107 @@ tbody tr:last-child td {
   }
   }
   
+
+/* ===== INTRO PREMIUM ODONTO IA ===== */
+
+body {
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "Odonto IA";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #122a32;
+  color: #ffffff;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 800;
+  letter-spacing: -1.8px;
+  animation: introFadeOut 1.8s ease forwards;
+  pointer-events: none;
+}
+
+body::after {
+  content: "SECRETÁRIA INTELIGENTE PARA CLÍNICAS";
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 74px;
+  background: transparent;
+  color: #8bbfb4;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  animation: subtitleFadeOut 1.5s ease forwards;
+  pointer-events: none;
+}
+
+.sidebar,
+.main-content {
+  animation: dashboardFadeIn 0.85s ease both;
+  animation-delay: 0.75s;
+}
+
+@keyframes introFadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes subtitleFadeOut {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes dashboardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after,
+  .sidebar,
+  .main-content {
+    animation-duration: 0.01ms;
+    animation-delay: 0ms;
+  }
+}
