@@ -1,1 +1,162 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>Odonto IA | Painel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a href="#" class="brand">
+        <div class="brand-icon">O</div>
+        <div>
+          <strong>Odonto<span>IA</span></strong>
+          <small>SMART ASSISTANT</small>
+        </div>
+      </a>
+
+      <div class="menu-label">MENU PRINCIPAL</div>
+      <nav class="navigation">
+        <a class="nav-link active" href="#dashboard">▦ <span>Dashboard</span></a>
+        <a class="nav-link" href="#conversas">▤ <span>Conversas</span></a>
+        <a class="nav-link" href="#agendamentos">▦ <span>Agendamentos</span></a>
+        <a class="nav-link" href="#pacientes">♙ <span>Pacientes</span></a>
+        <a class="nav-link" href="#assistente">✳ <span>Assistente IA</span></a>
+      </nav>
+
+      <div class="menu-label">SISTEMA</div>
+      <nav class="navigation">
+        <a class="nav-link" href="#relatorios">▥ <span>Relatórios</span></a>
+        <a class="nav-link" href="#configuracoes">⚙ <span>Configurações</span></a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="status-dot"></div>
+        <div>
+          <strong>Assistente de demonstração</strong>
+          <small>Ambiente de testes</small>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="breadcrumb">Odonto IA / <span id="breadcrumb">Dashboard</span></div>
+          <h1 id="page-title">Dashboard</h1>
+          <p>Visão geral do atendimento da sua clínica.</p>
+        </div>
+        <div class="top-actions">
+          <span class="demo-badge">● MODO DEMO</span>
+          <div class="avatar">OD</div>
+        </div>
+      </header>
+
+      <section class="content" id="dashboard">
+        <div class="welcome">
+          <div>
+            <span class="eyebrow">PAINEL DE CONTROLE</span>
+            <h2>Seu atendimento, mais inteligente.</h2>
+            <p>Acompanhe conversas, solicitações e a atividade da assistente virtual.</p>
+          </div>
+          <div class="welcome-icon">✳</div>
+        </div>
+
+        <div class="section-heading">
+          <div>
+            <h2>Resumo do atendimento</h2>
+            <p>Indicadores ilustrativos para demonstração.</p>
+          </div>
+          <span class="period">Últimos 7 dias⌄</span>
+        </div>
+
+        <div class="stats">
+          <article class="stat-card">
+            <div class="stat-top"><span>Conversas recebidas</span><span class="stat-icon blue">▤</span></div>
+            <strong>128</strong>
+            <small class="muted">Dados de demonstração</small>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span>Pedidos de consulta</span><span class="stat-icon green">＋</span></div>
+            <strong>34</strong>
+            <small class="muted">Dados de demonstração</small>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span>Aguardando equipe</span><span class="stat-icon orange">◷</span></div>
+            <strong>07</strong>
+            <small class="muted">Dados de demonstração</small>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span>Resolvidas pela IA</span><span class="stat-icon purple">✳</span></div>
+            <strong>86</strong>
+            <small class="muted">Dados de demonstração</small>
+          </article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <div><h3>Atividade recente</h3><p>Exemplos de conversas recebidas</p></div>
+              <a href="#conversas" class="text-link">Ver conversas →</a>
+            </div>
+            <div class="activity">
+              <div class="person-avatar a1">MC</div>
+              <div class="activity-info"><strong>Mariana Costa</strong><span>Gostaria de agendar uma avaliação.</span></div>
+              <span class="tag waiting">Novo pedido</span>
+            </div>
+            <div class="activity">
+              <div class="person-avatar a2">RS</div>
+              <div class="activity-info"><strong>Rafael Souza</strong><span>Qual é o horário de funcionamento?</span></div>
+              <span class="tag resolved">Respondida</span>
+            </div>
+            <div class="activity">
+              <div class="person-avatar a3">AL</div>
+              <div class="activity-info"><strong>Ana Lima</strong><span>Preciso falar com a recepção.</span></div>
+              <span class="tag waiting">Transferir</span>
+            </div>
+            <p class="demo-note">Os nomes e registros acima são fictícios.</p>
+          </article>
+
+          <article class="panel assistant-panel">
+            <div class="panel-heading">
+              <div><h3>Assistente virtual</h3><p>Status da demonstração</p></div>
+              <span class="online-tag"><i></i> Simulação</span>
+            </div>
+            <div class="assistant-graphic">✳</div>
+            <h3 class="center">Sua recepção inteligente</h3>
+            <p class="center muted">Prepare respostas, organize solicitações e encaminhe casos para sua equipe.</p>
+            <a href="#assistente" class="primary-button">Configurar assistente →</a>
+            <p class="demo-note center">WhatsApp ainda não conectado.</p>
+          </article>
+        </div>
+
+        <div class="panel quick-panel">
+          <div class="panel-heading"><div><h3>Acesso rápido</h3><p>Explore as áreas do sistema</p></div></div>
+          <div class="quick-links">
+            <a href="#conversas">▤ <span><strong>Conversas</strong><small>Ver atendimentos</small></span> →</a>
+            <a href="#agendamentos">▦ <span><strong>Agendamentos</strong><small>Pedidos de consulta</small></span> →</a>
+            <a href="#configuracoes">⚙ <span><strong>Configurações</strong><small>Dados da clínica</small></span> →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="content secondary-content" id="other-page" hidden>
+        <div class="panel page-placeholder">
+          <div class="placeholder-icon">✳</div>
+          <h2 id="other-title">Área do sistema</h2>
+          <p id="other-description">Esta área será construída na próxima etapa.</p>
+          <a href="#dashboard" class="primary-button">Voltar ao dashboard</a>
+        </div>
+      </section>
+
+      <footer>Odonto IA · Protótipo em desenvolvimento · <span>Dados demonstrativos</span></footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+  </html>
+
