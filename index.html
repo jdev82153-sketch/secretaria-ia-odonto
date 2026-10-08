@@ -4,159 +4,254 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101827">
-  <title>Odonto IA | Painel</title>
+  <meta name="theme-color" content="#122a32">
+  <title>Odonto IA — Central de Atendimento</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="intro" class="intro">
+    <div class="intro-logo">O</div>
+    <div class="intro-title">Odonto IA</div>
+    <div class="intro-subtitle">CENTRAL INTELIGENTE DE ATENDIMENTO</div>
+    <div class="intro-loader"><span></span></div>
+  </div>
+
   <div class="app">
-    <aside class="sidebar">
-      <a href="#" class="brand">
-        <div class="brand-icon">O</div>
-        <div>
-          <strong>Odonto<span>IA</span></strong>
-          <small>SMART ASSISTANT</small>
-        </div>
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard">
+        <span class="brand-icon">O</span>
+        <span>
+          <strong>Odonto IA</strong>
+          <small>Gestão inteligente</small>
+        </span>
       </a>
 
-      <div class="menu-label">MENU PRINCIPAL</div>
-      <nav class="navigation">
-        <a class="nav-link active" href="#dashboard">▦ <span>Dashboard</span></a>
-        <a class="nav-link" href="#conversas">▤ <span>Conversas</span></a>
-        <a class="nav-link" href="#agendamentos">▦ <span>Agendamentos</span></a>
-        <a class="nav-link" href="#pacientes">♙ <span>Pacientes</span></a>
-        <a class="nav-link" href="#assistente">✳ <span>Assistente IA</span></a>
-      </nav>
-
-      <div class="menu-label">SISTEMA</div>
-      <nav class="navigation">
-        <a class="nav-link" href="#relatorios">▥ <span>Relatórios</span></a>
-        <a class="nav-link" href="#configuracoes">⚙ <span>Configurações</span></a>
+      <div class="nav-label">MENU PRINCIPAL</div>
+      <nav class="main-nav">
+        <a href="#dashboard" data-page="dashboard" class="nav-link">
+          <span>▦</span> Dashboard
+        </a>
+        <a href="#conversas" data-page="conversas" class="nav-link active">
+          <span>◉</span> Conversas <b class="nav-count">3</b>
+        </a>
+        <a href="#agendamentos" data-page="agendamentos" class="nav-link">
+          <span>▦</span> Agendamentos
+        </a>
+        <a href="#pacientes" data-page="pacientes" class="nav-link">
+          <span>♙</span> Pacientes
+        </a>
+        <a href="#assistente" data-page="assistente" class="nav-link">
+          <span>✳</span> Assistente IA
+        </a>
+        <a href="#relatorios" data-page="relatorios" class="nav-link">
+          <span>▤</span> Relatórios
+        </a>
+        <a href="#configuracoes" data-page="configuracoes" class="nav-link">
+          <span>⚙</span> Configurações
+        </a>
       </nav>
 
       <div class="sidebar-bottom">
-        <div class="status-dot"></div>
-        <div>
-          <strong>Assistente de demonstração</strong>
-          <small>Ambiente de testes</small>
+        <div class="connection-card">
+          <div class="connection-heading">
+            <span class="connection-dot"></span>
+            Modo demonstração
+          </div>
+          <p>As conversas são fictícias. O WhatsApp ainda não está conectado.</p>
+        </div>
+        <div class="profile">
+          <div class="profile-avatar">OD</div>
+          <div class="profile-info">
+            <strong>Clínica Odontológica</strong>
+            <small>Painel administrativo</small>
+          </div>
+          <span class="profile-more">•••</span>
         </div>
       </div>
     </aside>
 
-    <main class="main">
+    <main class="main-content">
       <header class="topbar">
-        <div>
-          <div class="breadcrumb">Odonto IA / <span id="breadcrumb">Dashboard</span></div>
-          <h1 id="page-title">Dashboard</h1>
-          <p>Visão geral do atendimento da sua clínica.</p>
+        <button id="menu-toggle" class="icon-button mobile-menu" aria-label="Abrir menu">☰</button>
+        <div class="topbar-title">
+          <div class="eyebrow">ESPAÇO DE TRABALHO / <span id="breadcrumb">CONVERSAS</span></div>
+          <h1 id="page-title">Central de conversas</h1>
         </div>
-        <div class="top-actions">
-          <span class="demo-badge">● MODO DEMO</span>
-          <div class="avatar">OD</div>
+        <div class="topbar-right">
+          <span class="demo-label"><span></span> DEMONSTRAÇÃO</span>
+          <div class="top-avatar">OD</div>
         </div>
       </header>
 
-      <section class="content" id="dashboard">
-        <div class="welcome">
-          <div>
-            <span class="eyebrow">PAINEL DE CONTROLE</span>
-            <h2>Seu atendimento, mais inteligente.</h2>
-            <p>Acompanhe conversas, solicitações e a atividade da assistente virtual.</p>
+      <div class="content">
+        <section class="page active" id="page-conversas">
+          <div class="page-intro">
+            <div>
+              <h2>Atendimento</h2>
+              <p>Gerencie conversas e simule o atendimento da sua clínica.</p>
+            </div>
+            <button class="button button-secondary" id="reset-demo">↻ Reiniciar demonstração</button>
           </div>
-          <div class="welcome-icon">✳</div>
-        </div>
 
-        <div class="section-heading">
-          <div>
-            <h2>Resumo do atendimento</h2>
-            <p>Indicadores ilustrativos para demonstração.</p>
+          <div class="conversation-layout">
+            <section class="chat-list-panel">
+              <div class="chat-list-header">
+                <div>
+                  <h3>Mensagens</h3>
+                  <p id="chat-total">3 conversas de demonstração</p>
+                </div>
+                <button id="new-chat" class="icon-button" title="Nova conversa" aria-label="Nova conversa">＋</button>
+              </div>
+
+              <label class="search-box">
+                <span>⌕</span>
+                <input id="chat-search" type="search" placeholder="Buscar conversa..." autocomplete="off">
+              </label>
+
+              <div class="chat-filters">
+                <button class="filter-button active" data-filter="todas">Todas</button>
+                <button class="filter-button" data-filter="pendentes">Pendentes</button>
+                <button class="filter-button" data-filter="ia">IA</button>
+              </div>
+
+              <div id="chat-list" class="chat-list"></div>
+              <div id="empty-list" class="empty-list hidden">Nenhuma conversa encontrada.</div>
+            </section>
+
+            <section class="chat-panel">
+              <div id="chat-empty" class="chat-empty">
+                <div class="empty-symbol">◉</div>
+                <h3>Escolha uma conversa</h3>
+                <p>Selecione alguém na lista para visualizar o histórico de mensagens.</p>
+              </div>
+
+              <div id="chat-active" class="chat-active hidden">
+                <header class="chat-header">
+                  <div class="chat-contact">
+                    <div id="contact-avatar" class="contact-avatar">MC</div>
+                    <div>
+                      <h3 id="contact-name">Paciente</h3>
+                      <p id="contact-status">Conversa de demonstração</p>
+                    </div>
+                  </div>
+                  <div class="chat-header-actions">
+                    <button id="toggle-ai" class="button button-secondary button-small">✳ Ativar IA</button>
+                    <button id="close-chat" class="icon-button" title="Marcar como resolvida" aria-label="Marcar como resolvida">✓</button>
+                  </div>
+                </header>
+
+                <div class="simulation-notice">
+                  <span>ⓘ</span>
+                  Simulação: as mensagens não são enviadas pelo WhatsApp.
+                </div>
+
+                <div id="message-list" class="message-list" aria-live="polite"></div>
+
+                <div id="quick-replies" class="quick-replies">
+                  <button data-reply="Olá! Nossa equipe pode ajudar você com isso.">Responder cordialmente</button>
+                  <button data-reply="Posso verificar os horários disponíveis para você.">Consultar horários</button>
+                  <button data-reply="Vou encaminhar sua solicitação para nossa equipe.">Encaminhar à equipe</button>
+                </div>
+
+                <form id="message-form" class="message-form">
+                  <textarea id="message-input" rows="1" maxlength="1000" placeholder="Escreva uma mensagem..." aria-label="Escreva uma mensagem"></textarea>
+                  <button class="send-button" type="submit" aria-label="Enviar mensagem">➤</button>
+                </form>
+                <div class="composer-footer">
+                  <span>Enter para enviar · Shift + Enter para nova linha</span>
+                  <span id="character-count">0/1000</span>
+                </div>
+              </div>
+            </section>
           </div>
-          <span class="period">Últimos 7 dias⌄</span>
-        </div>
+        </section>
 
-        <div class="stats">
-          <article class="stat-card">
-            <div class="stat-top"><span>Conversas recebidas</span><span class="stat-icon blue">▤</span></div>
-            <strong>128</strong>
-            <small class="muted">Dados de demonstração</small>
-          </article>
-          <article class="stat-card">
-            <div class="stat-top"><span>Pedidos de consulta</span><span class="stat-icon green">＋</span></div>
-            <strong>34</strong>
-            <small class="muted">Dados de demonstração</small>
-          </article>
-          <article class="stat-card">
-            <div class="stat-top"><span>Aguardando equipe</span><span class="stat-icon orange">◷</span></div>
-            <strong>07</strong>
-            <small class="muted">Dados de demonstração</small>
-          </article>
-          <article class="stat-card">
-            <div class="stat-top"><span>Resolvidas pela IA</span><span class="stat-icon purple">✳</span></div>
-            <strong>86</strong>
-            <small class="muted">Dados de demonstração</small>
-          </article>
-        </div>
-
-        <div class="dashboard-grid">
-          <article class="panel">
-            <div class="panel-heading">
-              <div><h3>Atividade recente</h3><p>Exemplos de conversas recebidas</p></div>
-              <a href="#conversas" class="text-link">Ver conversas →</a>
+        <section class="page" id="page-dashboard">
+          <div class="page-intro">
+            <div>
+              <h2>Visão geral</h2>
+              <p>Acompanhe a atividade do atendimento da sua clínica.</p>
             </div>
-            <div class="activity">
-              <div class="person-avatar a1">MC</div>
-              <div class="activity-info"><strong>Mariana Costa</strong><span>Gostaria de agendar uma avaliação.</span></div>
-              <span class="tag waiting">Novo pedido</span>
-            </div>
-            <div class="activity">
-              <div class="person-avatar a2">RS</div>
-              <div class="activity-info"><strong>Rafael Souza</strong><span>Qual é o horário de funcionamento?</span></div>
-              <span class="tag resolved">Respondida</span>
-            </div>
-            <div class="activity">
-              <div class="person-avatar a3">AL</div>
-              <div class="activity-info"><strong>Ana Lima</strong><span>Preciso falar com a recepção.</span></div>
-              <span class="tag waiting">Transferir</span>
-            </div>
-            <p class="demo-note">Os nomes e registros acima são fictícios.</p>
-          </article>
-
-          <article class="panel assistant-panel">
-            <div class="panel-heading">
-              <div><h3>Assistente virtual</h3><p>Status da demonstração</p></div>
-              <span class="online-tag"><i></i> Simulação</span>
-            </div>
-            <div class="assistant-graphic">✳</div>
-            <h3 class="center">Sua recepção inteligente</h3>
-            <p class="center muted">Prepare respostas, organize solicitações e encaminhe casos para sua equipe.</p>
-            <a href="#assistente" class="primary-button">Configurar assistente →</a>
-            <p class="demo-note center">WhatsApp ainda não conectado.</p>
-          </article>
-        </div>
-
-        <div class="panel quick-panel">
-          <div class="panel-heading"><div><h3>Acesso rápido</h3><p>Explore as áreas do sistema</p></div></div>
-          <div class="quick-links">
-            <a href="#conversas">▤ <span><strong>Conversas</strong><small>Ver atendimentos</small></span> →</a>
-            <a href="#agendamentos">▦ <span><strong>Agendamentos</strong><small>Pedidos de consulta</small></span> →</a>
-            <a href="#configuracoes">⚙ <span><strong>Configurações</strong><small>Dados da clínica</small></span> →</a>
+            <span class="demo-label"><span></span> DADOS FICTÍCIOS</span>
           </div>
-        </div>
-      </section>
+          <div class="stats-grid">
+            <article class="stat-card"><span class="stat-icon mint">◉</span><p>Conversas simuladas</p><strong id="stat-conversations">3</strong><small>Histórico de demonstração</small></article>
+            <article class="stat-card"><span class="stat-icon blue">▦</span><p>Agendamentos de exemplo</p><strong>4</strong><small>Não são consultas reais</small></article>
+            <article class="stat-card"><span class="stat-icon amber">◷</span><p>Aguardando equipe</p><strong id="stat-pending">2</strong><small>Solicitações fictícias</small></article>
+            <article class="stat-card"><span class="stat-icon purple">✳</span><p>Assistente IA</p><strong id="stat-ai">Ativa</strong><small>Somente nesta simulação</small></article>
+          </div>
+          <div class="panel dashboard-callout">
+            <div class="callout-icon">◉</div>
+            <div><h3>Experimente o atendimento</h3><p>Abra a central de conversas, selecione um paciente fictício e teste o envio de mensagens.</p></div>
+            <button class="button button-primary" data-go="conversas">Abrir conversas →</button>
+          </div>
+        </section>
 
-      <section class="content secondary-content" id="other-page" hidden>
-        <div class="panel page-placeholder">
-          <div class="placeholder-icon">✳</div>
-          <h2 id="other-title">Área do sistema</h2>
-          <p id="other-description">Esta área será construída na próxima etapa.</p>
-          <a href="#dashboard" class="primary-button">Voltar ao dashboard</a>
-        </div>
-      </section>
+        <section class="page" id="page-agendamentos">
+          <div class="page-intro"><div><h2>Agendamentos</h2><p>Organize solicitações de consulta na demonstração.</p></div><button class="button button-primary" id="add-appointment">＋ Novo agendamento</button></div>
+          <div class="panel">
+            <div class="panel-heading"><div><h3>Agenda de exemplo</h3><p>Estes registros não correspondem a consultas reais.</p></div></div>
+            <div class="table-wrap"><table><thead><tr><th>Paciente fictício</th><th>Serviço</th><th>Data</th><th>Horário</th><th>Status</th></tr></thead><tbody id="appointments-body"></tbody></table></div>
+          </div>
+        </section>
 
-      <footer>Odonto IA · Protótipo em desenvolvimento · <span>Dados demonstrativos</span></footer>
+        <section class="page" id="page-pacientes">
+          <div class="page-intro"><div><h2>Pacientes</h2><p>Lista ilustrativa de contatos para testar o painel.</p></div></div>
+          <div class="panel"><div class="panel-heading"><div><h3>Contatos de demonstração</h3><p>Sem dados de pacientes reais.</p></div></div><div id="patients-list" class="patients-list"></div></div>
+        </section>
+
+        <section class="page" id="page-assistente">
+          <div class="page-intro"><div><h2>Assistente IA</h2><p>Teste respostas de exemplo para dúvidas frequentes.</p></div></div>
+          <div class="assistant-layout">
+            <div class="panel">
+              <div class="panel-heading"><div><h3>Simulador de respostas</h3><p>Este teste usa regras locais, sem conexão a um modelo de IA.</p></div></div>
+              <form id="assistant-form">
+                <label class="field-label" for="assistant-question">Pergunta de exemplo</label>
+                <textarea id="assistant-question" class="assistant-input" rows="3" placeholder="Ex.: Qual o horário de atendimento?"></textarea>
+                <button class="button button-primary" type="submit">Testar resposta →</button>
+              </form>
+              <div id="assistant-answer" class="assistant-answer hidden" aria-live="polite"></div>
+            </div>
+            <div class="panel"><div class="assistant-profile"><div class="assistant-large-icon">✳</div><h3>Assistente Odonto IA</h3><p>Perfil demonstrativo</p><span class="status-pill">● Modo de teste</span></div><div class="setting-row"><span>Respostas de exemplo</span><strong>Ativadas</strong></div><div class="setting-row"><span>WhatsApp conectado</span><strong>Não</strong></div><div class="setting-row"><span>IA externa conectada</span><strong>Não</strong></div></div>
+          </div>
+        </section>
+
+        <section class="page" id="page-relatorios">
+          <div class="page-intro"><div><h2>Relatórios</h2><p>Resumo ilustrativo da atividade.</p></div></div>
+          <div class="panel"><div class="empty-state"><div class="empty-symbol">▤</div><h3>Relatórios demonstrativos</h3><p>As métricas atuais são fictícias. Os relatórios reais serão implementados quando houver armazenamento de dados e integrações.</p></div></div>
+        </section>
+
+        <section class="page" id="page-configuracoes">
+          <div class="page-intro"><div><h2>Configurações</h2><p>Personalize os dados usados nesta simulação.</p></div></div>
+          <div class="panel">
+            <div class="panel-heading"><div><h3>Perfil da clínica</h3><p>As alterações abaixo ficam apenas nesta sessão do navegador.</p></div></div>
+            <form id="settings-form" class="settings-form">
+              <label class="field-label" for="clinic-name">Nome de demonstração</label>
+              <input id="clinic-name" class="settings-input" value="Clínica Odontológica" maxlength="80">
+              <label class="field-label" for="clinic-hours">Horário de funcionamento</label>
+              <input id="clinic-hours" class="settings-input" value="Segunda a sexta, das 08h às 18h" maxlength="120">
+              <button class="button button-primary" type="submit">Aplicar nesta sessão</button>
+              <p id="settings-feedback" class="form-feedback" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
+
+        <footer class="footer">Odonto IA · Protótipo interativo · <span>Dados inteiramente fictícios</span></footer>
+      </div>
     </main>
   </div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button id="modal-close" class="modal-close" aria-label="Fechar">×</button>
+      <h3 id="modal-title">Novo registro</h3>
+      <p id="modal-description">Preencha os campos de demonstração.</p>
+      <form id="modal-form"></form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
   <script src="script.js"></script>
 </body>
   </html>
-
+  
